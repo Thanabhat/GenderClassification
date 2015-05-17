@@ -5,15 +5,23 @@ IMG_SIZE = 32, 32
 
 
 def openImage(inputFilePath):
-    outputFilePath = os.path.splitext(inputFilePath)[0] + ".thumbnail"
-    try:
-        img = Image.open(inputFilePath)
-        img = img.resize(IMG_SIZE, Image.ANTIALIAS)
-        img = img.convert("L")
-        img.save(outputFilePath, "JPEG")
-        return img
-    except IOError:
-        print("cannot create thumbnail for '%s'" % inputFilePath)
+    thumbnailFilePath = os.path.splitext(inputFilePath)[0] + ".thumbnail"
+    if os.path.isfile(thumbnailFilePath):
+        try:
+            img = Image.open(thumbnailFilePath)
+            img = img.convert("L")
+            return img
+        except IOError:
+            print("cannot open thumbnail for '%s'" % inputFilePath)
+    else:
+        try:
+            img = Image.open(inputFilePath)
+            img = img.resize(IMG_SIZE, Image.ANTIALIAS)
+            img = img.convert("L")
+            img.save(thumbnailFilePath, "JPEG")
+            return img
+        except IOError:
+            print("cannot create thumbnail for '%s'" % inputFilePath)
 
 
 def printPixel(pix):
