@@ -145,5 +145,5 @@ def load_data():
 
 # datasets = load_data('mnist.pkl.gz')
 datasets = load_data()
-test_mlp(datasets=datasets)
+test_mlp(datasets=datasets, n_hidden=200, batch_size=1)
 
