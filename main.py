@@ -38,8 +38,8 @@ def printPixel(pix):
 
 
 def load_data():
-    M_IMAGE_COUNT = 10
-    F_IMAGE_COUNT = 10
+    M_IMAGE_COUNT = 20
+    F_IMAGE_COUNT = 20
 
     all_data_x = []
     all_data_y = []
