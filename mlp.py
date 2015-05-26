@@ -200,8 +200,8 @@ def test_mlp(datasets, learning_rate=0.01, L1_reg=0.00, L2_reg=0.0001, n_epochs=
 
     This is demonstrated on MNIST.
 
-    :type dataset: list
-    :param dataset: list of 3 dataset
+    :type datasets: list
+    :param datasets: list of 3 dataset
 
     :type learning_rate: float
     :param learning_rate: learning rate used (factor for the stochastic

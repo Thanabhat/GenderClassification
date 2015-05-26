@@ -6,6 +6,7 @@ import random
 from PIL import Image
 # from logistic_sgd import load_data
 from mlp import test_mlp
+from DBN import test_DBN
 
 IMG_SIZE = 32, 32
 
@@ -145,5 +146,5 @@ def load_data():
 
 # datasets = load_data('mnist.pkl.gz')
 datasets = load_data()
-test_mlp(datasets=datasets, n_hidden=200, batch_size=1)
-
+# test_mlp(datasets=datasets, n_hidden=200, batch_size=1)
+test_DBN(datasets=datasets, pretraining_epochs=100, training_epochs=1000, batch_size=1)
